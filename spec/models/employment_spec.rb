@@ -12,8 +12,14 @@ describe Employment do
 	let(:employment) { FactoryGirl.create(:employment) }
 
 	context '#create' do 
-		it 'should accept all necessary attributes upon creation' do
-			expect(employment).to be_a Employment
+		it 'requires name, description, start_date, lesson to be created' do
+			expect(Employment.create(
+				name:        Faker::Company.name,
+				description: Faker::Lorem.sentence,
+				start_date:  2.days.ago,
+				end_date:    4.days.ago,
+				lesson:      Faker::Lorem.sentence)
+			).to be_a Employment
 		end
 
 		it 'should have type of Employment' do 

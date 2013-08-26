@@ -12,8 +12,14 @@ describe Skill do
 	let(:skill) { FactoryGirl.create(:skill) }
 
 	context '#create' do 
-		it 'should accept all necessary attributes upon creation' do
-			expect(skill).to be_a Skill
+		it 'requires name, description, start_date, lesson to be created' do
+			expect(Skill.create(
+				name:        Faker::Company.name,
+				description: Faker::Lorem.sentence,
+				start_date:  2.days.ago,
+				end_date:    4.days.ago,
+				lesson:      Faker::Lorem.sentence)
+			).to be_a Skill
 		end
 
 		it 'should have type of Skill' do 
