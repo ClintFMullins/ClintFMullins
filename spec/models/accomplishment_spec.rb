@@ -12,8 +12,14 @@ describe Accomplishment do
 	let(:accomplishment) { FactoryGirl.create(:accomplishment) }
 
 	context '#create' do 
-		it 'should accept all necessary attributes upon creation' do
-			expect(accomplishment).to be_a Accomplishment
+		it 'requires name, description, start_date, lesson to be created' do
+			expect(Accomplishment.create(
+				name:        Faker::Company.name,
+				description: Faker::Lorem.sentence,
+				start_date:  2.days.ago,
+				end_date:    4.days.ago,
+				lesson:      Faker::Lorem.sentence)
+			).to be_a Accomplishment
 		end
 
 		it 'should have type of Accomplishment' do 
