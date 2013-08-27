@@ -1,0 +1,40 @@
+$skill-col: yellow;
+$employ-col: blue;
+$accomp-col: red;
+$hobby-col: green;
+
+.experience {
+  display: inline-block;
+  width: 15em;
+  margin: 1em;
+  border: black solid .5em;
+  padding: 1em;
+
+  header {
+    .name {
+      float: left;
+    }
+    .type {
+      float: right;
+    }
+  }
+}
+
+.skill {
+  background-color: $skill-col;
+}
+
+.employment {
+  background-color: $employ-col;
+
+}
+
+.accomplishment {
+  background-color: $accomp-col;
+
+}
+
+.hobby {
+  background-color: $hobby-col;
+}
+
