@@ -1,4 +1,8 @@
-%input{type: 'submit', value: 'toggle', class: 'toggle'}
+%input{type: 'submit', value: 'all', class: 'all'}
+%input{type: 'submit', value: 'skills', class: 'skills'}
+%input{type: 'submit', value: 'projects', class: 'projects'}
+%input{type: 'submit', value: 'positions', class: 'positions'}
+%input{type: 'submit', value: 'hobbies', class: 'hobbies'}
 .all-experiences
   - @experiences.each do |experience|
     - type = experience.type.downcase
