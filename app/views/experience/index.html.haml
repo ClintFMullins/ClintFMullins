@@ -1,6 +1,8 @@
-- @experiences.each do |experience|
-  - type = experience.type.downcase
-  %article{class: "experience #{type}"} 
-    %header
-      .name= experience.name
-      .type= experience.type[0]
+%input{type: 'submit', value: 'toggle', class: 'toggle'}
+.all-experiences
+  - @experiences.each do |experience|
+    - type = experience.type.downcase
+    %article{class: "experience #{type}"} 
+      %header
+        .name= experience.name
+        .type= experience.type[0]
