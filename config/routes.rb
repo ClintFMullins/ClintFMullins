@@ -1,4 +1,5 @@
 ClintFMullins::Application.routes.draw do
+  root to: 'experience#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
