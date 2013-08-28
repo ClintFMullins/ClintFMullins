@@ -123,7 +123,7 @@ var Responsive = {
     this.current = null;
     this.elementClass = elementClass
     this.screenWidths = [500,800,1300,1600];
-    this.itemPercents = [90,32,23,15];
+    this.itemPercents = [90,48,20,16];
     this.watchWindow();
   },
 
@@ -141,7 +141,7 @@ var Responsive = {
           break;
         }
       }
-      
+
     });
   },
 

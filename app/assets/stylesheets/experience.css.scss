@@ -39,13 +39,42 @@ $hobby-col: green;
   border-top-right-radius: $radius;
 }
 
+@mixin exp($color){
+  background-color: $color;
+  border: darken($color, 30) solid .2em;
+  header {
+    height: 2.3em;
+    background-color: darken($color, 10);
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  footer {
+    background-color: darken($color,20);
+    transition: border .2s, 
+                background-color .2s,
+                font-size .2s;
+    @include rounded-top-left-corner(2px); 
+
+    &:hover {
+      font-size: 2em;
+      background-color: darken($color,30);
+      color: lighten($color,20);
+      border-top: solid darken($color,20) 2px;
+      border-left: solid darken($color,20) 2px;
+      /*padding: 1em !important;*/
+    }
+  }
+}
+
 .experience {
   display: inline-block;
   width: 10em;
   height: 10em;
   margin: 1em .5em 0em .5em;
-  border: black solid .2em;
-  padding: 1em;
+  /*padding: 1em;*/
+  position: relative;
   @include rounded-corners(2px);
 
   header {
@@ -61,26 +90,33 @@ $hobby-col: green;
       display: none;
     }
   }
+
+  footer {
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    padding: 1px .2em;
+    background-color: rgba(255,255,255,.5);
+    cursor: pointer;
+  }
 }
 
 .skill {
-  background-color: $skill-col;
+  @include exp($skill-col);
 }
 
 .employment {
-  background-color: $employ-col;
-
+  @include exp($employ-col);
 }
 
 .accomplishment {
-  background-color: $accomp-col;
-
+  @include exp($accomp-col);
 }
 
 .hobby {
-  background-color: $hobby-col;
+  @include exp($hobby-col);
 }
 
 .colorless{
-  background-color: grey;
+  @include exp(gray);
 }
