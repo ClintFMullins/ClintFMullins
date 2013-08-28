@@ -46,7 +46,7 @@ $hobby-col: green;
   margin: 1em;
   border: black solid .2em;
   padding: 1em;
-  @include rounded-corners(20%);
+  @include rounded-corners(2px);
 
   header {
     .name {
