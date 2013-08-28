@@ -43,7 +43,7 @@ $hobby-col: green;
   display: inline-block;
   width: 10em;
   height: 10em;
-  margin: 1em;
+  margin: 1em .5em 0em .5em;
   border: black solid .2em;
   padding: 1em;
   @include rounded-corners(2px);
@@ -52,8 +52,13 @@ $hobby-col: green;
     .name {
       float: left;
     }
+    
     .type {
-      float: right;
+      display: none;
+    }
+
+    .unique {
+      display: none;
     }
   }
 }
@@ -76,3 +81,6 @@ $hobby-col: green;
   background-color: $hobby-col;
 }
 
+.colorless{
+  background-color: grey;
+}
