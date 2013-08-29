@@ -1,7 +1,7 @@
-$skill-col: yellow;
-$employ-col: blue;
-$accomp-col: red;
-$hobby-col: green;
+$skill-col: #FFFE5C;
+$employ-col: #5C65FF;
+$accomp-col: #BDE8D7;
+$hobby-col: #E85F9A;
 
 @mixin shadow($x,$y, $blur){
   -webkit-box-shadow: $x $y $blur rgba(200, 200, 200, 0.58);
@@ -71,7 +71,7 @@ $hobby-col: green;
 .experience {
   display: inline-block;
   width: 10em;
-  height: 10em;
+  height: 15em;
   margin: 1em .5em 0em .5em;
   /*padding: 1em;*/
   position: relative;
