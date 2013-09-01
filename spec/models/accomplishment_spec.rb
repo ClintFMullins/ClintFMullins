@@ -27,4 +27,10 @@ describe Accomplishment do
 		end
 	end
 
+	context 'it has tags' do
+		it 'should have tags seperated by spaces' do
+			accomplishment.tags.split.should have(2).items
+		end
+	end
+
 end

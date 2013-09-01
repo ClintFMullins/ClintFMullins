@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130825224546) do
     t.datetime "end_date"
     t.text     "lesson",      :null => false
     t.string   "type",        :null => false
+    t.string   "tags"
   end
 
 end
