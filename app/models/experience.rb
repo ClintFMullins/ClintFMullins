@@ -3,7 +3,7 @@ class Experience < ActiveRecord::Base
 	validates_presence_of :name, :description, :start_date, :lesson, :kind
 
 	def nice_tags
-		tags
+		tags.scan(/#[A-Za-z]{1,}/).join(' ')
 	end
 
 end

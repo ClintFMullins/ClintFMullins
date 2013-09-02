@@ -9,7 +9,7 @@ def main_tag
 end
 
 def tags
-	['java','python','ruby','AI','Dev Bootcamp'].sample(2)
+	['#java','#python','#ruby','#AI','#Dev Bootcamp'].sample(2)
 end
 
 40.times do 
