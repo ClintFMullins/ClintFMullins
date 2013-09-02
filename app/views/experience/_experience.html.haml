@@ -1,0 +1,7 @@
+- kind = experience.kind.downcase
+%article{class: "experience #{kind}"} 
+  %span{class: "e#{i}"}
+  %header
+    .name= experience.name
+    .type= experience.kind
+  %footer +

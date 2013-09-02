@@ -24,7 +24,7 @@ AllExperiences.prototype = {
   setUpListeners: function(){
     var self = this;
     var experienceNames = ['.skills','.projects','.positions','.hobbies'];
-    var htmlNames = ['skill','accomplishment','employment','hobby']
+    var htmlNames = ['skill','project','work','hobby']
 
     for (i in experienceNames){
       this.oneListener(experienceNames[i], htmlNames[i]);
