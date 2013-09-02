@@ -1,3 +1,27 @@
 body {
-	background-color: white;
+	background-color: black;
+
+}
+
+.intro {
+	height: 10em;
+	background-color: black;
+	position: relative;
+	transition: height 1s;
+
+	.filters {
+		position: absolute;
+		bottom: 0;
+		margin-left:10%;
+        margin-right:auto;
+	}
+}
+
+.shrunken {
+	height: 3em;
+}
+
+.all-experiences {
+	margin: 0 auto;
+	width: 90%;
 }

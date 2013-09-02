@@ -1,8 +1,10 @@
-%input{type: 'submit', value: 'all', class: 'all'}
-%input{type: 'submit', value: 'skills', class: 'skills'}
-%input{type: 'submit', value: 'projects', class: 'projects'}
-%input{type: 'submit', value: 'positions', class: 'positions'}
-%input{type: 'submit', value: 'hobbies', class: 'hobbies'}
+.intro
+  .filters
+    %input{type: 'submit', value: 'all', class: 'all'}
+    %input{type: 'submit', value: 'skills', class: 'skills'}
+    %input{type: 'submit', value: 'projects', class: 'projects'}
+    %input{type: 'submit', value: 'positions', class: 'positions'}
+    %input{type: 'submit', value: 'hobbies', class: 'hobbies'}
 .all-experiences
   - @experiences.each_with_index do |experience, i|
     = render partial: 'experience', locals: {experience: experience, i: i }
