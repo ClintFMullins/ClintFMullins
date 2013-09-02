@@ -9,7 +9,7 @@ def main_tag
 end
 
 def tags
-	['java','python','ruby','AI','Dev Bootcamp'].sample(rand(3))
+	['java','python','ruby','AI','Dev Bootcamp'].sample(2)
 end
 
 40.times do 
@@ -19,7 +19,7 @@ end
 		start_date:  time_rand,
 		end_date:    time_rand,
 		lesson:      Faker::Lorem.sentence, 
-		type:    		 main_tag,
+		kind:    		 main_tag,
 		tags:        tags
 	)
 end

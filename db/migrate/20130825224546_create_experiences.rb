@@ -6,7 +6,7 @@ class CreateExperiences < ActiveRecord::Migration
   		t.datetime :start_date,		null: false
   		t.datetime :end_date			
   		t.text     :lesson,				null: false
-      t.string   :type,         default: 'other'
+      t.string   :kind,         default: 'other'
       t.string   :tags
   	end
   end

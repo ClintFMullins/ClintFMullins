@@ -7,7 +7,7 @@ describe Experience do
 	it { should validate_presence_of :description }
 	it { should validate_presence_of :start_date }
 	it { should validate_presence_of :lesson }
-	it { should validate_presence_of :type }
+	it { should validate_presence_of :kind }
 
 	let(:experience) { FactoryGirl.create(:experience) }
 

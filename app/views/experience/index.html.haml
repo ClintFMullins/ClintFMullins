@@ -5,10 +5,10 @@
 %input{type: 'submit', value: 'hobbies', class: 'hobbies'}
 .all-experiences
   - @experiences.each_with_index do |experience, i|
-    - type = experience.type.downcase
-    %article{class: "experience #{type}"} 
+    - kind = experience.kind.downcase
+    %article{class: "experience #{kind}"} 
       %span{class: "e#{i}"}
       %header
         .name= experience.name
-        .type= experience.type
+        .type= experience.kind
       %footer +
