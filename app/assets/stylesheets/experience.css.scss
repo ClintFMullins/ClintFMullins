@@ -40,7 +40,7 @@ $hobby-col: #E85F9A;
 }
 
 @mixin exp($color){
-  background-color: $color;
+  background-color: lighten($color,20);
   border: darken($color, 30) solid .2em;
   header {
     height: 2.3em;
@@ -51,19 +51,21 @@ $hobby-col: #E85F9A;
   }
 
   footer {
-    background-color: darken($color,20);
-    transition: border .2s, 
-                background-color .2s,
-                font-size .2s;
-    @include rounded-top-left-corner(2px); 
 
-    &:hover {
-      font-size: 2em;
-      background-color: darken($color,30);
-      color: lighten($color,20);
-      border-top: solid darken($color,20) 2px;
-      border-left: solid darken($color,20) 2px;
-      /*padding: 1em !important;*/
+    .more {
+      background-color: darken($color,20);
+      transition: border .2s, 
+                  background-color .2s,
+                  font-size .2s;
+      @include rounded-top-left-corner(2px); 
+
+      &:hover {
+        font-size: 2em;
+        background-color: darken($color,30);
+        color: lighten($color,20);
+        border-top: solid darken($color,20) 2px;
+        border-left: solid darken($color,20) 2px;
+      }
     }
   }
 }
@@ -94,10 +96,20 @@ $hobby-col: #E85F9A;
   footer {
     position: absolute;
     bottom: 0em;
-    right: 0em;
-    padding: 1px .2em;
-    background-color: rgba(255,255,255,.5);
-    cursor: pointer;
+    width: 100%;
+
+    .tags{
+      font-size: .7em;
+    }
+
+    .more {
+      position: absolute;
+      right: 0em;
+      bottom: 0em;
+      background-color: rgba(255,255,255,.5);
+      cursor: pointer;
+      padding: 1px .2em;
+    }
   }
 }
 
