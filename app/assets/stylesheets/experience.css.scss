@@ -105,11 +105,11 @@ $hobby-col: #E85F9A;
   @include exp($skill-col);
 }
 
-.employment {
+.work {
   @include exp($employ-col);
 }
 
-.accomplishment {
+.project {
   @include exp($accomp-col);
 }
 

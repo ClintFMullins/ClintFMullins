@@ -7,11 +7,11 @@ describe Experience do
 	it { should validate_presence_of :description }
 	it { should validate_presence_of :start_date }
 	it { should validate_presence_of :lesson }
+	it { should validate_presence_of :type }
 
 	let(:experience) { FactoryGirl.create(:experience) }
 
 	context '#create' do 
-		
 		it 'requires name, description, start_date, lesson to be created' do
 			expect(Experience.create(
 				name:        Faker::Company.name,
@@ -25,11 +25,9 @@ describe Experience do
 	end
 
 	context 'it has tags' do
-
 		it 'should have tags seperated by spaces' do
-			experience.tags.split.should have(2).items
+			accomplishment.tags.split.should have(2).items
 		end
-
 	end
 
 end
