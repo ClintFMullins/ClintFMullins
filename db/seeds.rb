@@ -19,7 +19,7 @@ end
 		start_date:  time_rand,
 		end_date:    time_rand,
 		lesson:      Faker::Lorem.sentence, 
-		type:    		 main_tag
+		type:    		 main_tag,
 		tags:        tags
 	)
 end

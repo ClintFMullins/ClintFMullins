@@ -26,7 +26,7 @@ describe Experience do
 
 	context 'it has tags' do
 		it 'should have tags seperated by spaces' do
-			accomplishment.tags.split.should have(2).items
+			experience.tags.split.should have(2).items
 		end
 	end
 

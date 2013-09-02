@@ -11,6 +11,7 @@ FactoryGirl.define do
 		start_date  { 2.days.ago }
 		end_date    { Date.today }
 		lesson      { Faker::Lorem.sentence }
+		type        { 'other' }
 		tags        { possible_tags.sample(2).join(" ") }
   end
 
