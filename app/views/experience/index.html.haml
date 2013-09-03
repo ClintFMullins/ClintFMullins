@@ -1,9 +1,12 @@
 .intro
-  .clint
-
-    .prof-pic
-      =image_tag '3e2ccec.jpeg', class: 'prof-img'
-      .caption
+  .prof-pic
+    =image_tag '3e2ccec.jpeg', class: 'prof-img'
+    .caption
+  .explaination
+    .cursplanation
+      This is when I went to puerto rico for no reason I need to fill this space.
+    .loadsplanation
+      A different div arrives from under the floorboardsman you know?
   .filters
     %input{type: 'submit', value: 'all', class: 'all'}
     %input{type: 'submit', value: 'skills', class: 'skills'}
@@ -11,5 +14,8 @@
     %input{type: 'submit', value: 'positions', class: 'positions'}
     %input{type: 'submit', value: 'hobbies', class: 'hobbies'}
 .all-experiences
+  .welcome
+    =image_tag 'sf.jpg', class: 'welcome-img'
+    My name is Clint Mullins
   - @experiences.each_with_index do |experience, i|
     = render partial: 'experience', locals: {experience: experience, i: i }

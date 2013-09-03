@@ -24,16 +24,10 @@ $chosen-height: 3em;
 }
 
 body {  
-  /*background-image: url('tree_bark.png');*/
-  background: rgb(169,3,41); /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  background-image: url('sf.png');
+  background-attachment:fixed;
+  background-position:0 0;
+  background-repeat:no-repeat;
 }
 
 html {
@@ -100,6 +94,21 @@ html {
     .skills.chosen{
       @include chosen($skill-col);
     }
+  }
+}
+
+.welcome{
+  width: 93%;
+  /*background-image: url('sf.png');*/
+  overflow: hidden;
+  height: 23em;
+  margin-bottom: 1em;
+  position: relative;
+  @include shadow($grey, 30);
+
+  .welcome-img {
+    position: absolute;
+    width: 100%;
   }
 }
 

@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var elementClass = '.experience';
   allExperiences = new AllExperiences();
-  Responsive.init(elementClass);
+  // Responsive.init(elementClass);
 });
 
 function AllExperiences(){
@@ -124,42 +124,39 @@ ExperienceView.prototype = {
   }
 }
 
-var Responsive = {
-  init: function(elementClass){
-    this.current = null;
-    this.elementClass = elementClass
-    this.screenWidths = [500,1000,1500,2000];
-    this.itemPercents = [90,45,30,23];
-    this.watchWindow();
-    this.resize();
-  },
+// var Responsive = {
+//   init: function(elementClass){
+//     this.current = null;
+//     this.elementClass = elementClass
+//     this.screenWidths = [500,1000,1500,2000];
+//     this.itemPercents = [90,45,30,23];
+//     this.watchWindow();
+//   },
 
-  watchWindow: function(){
-    var self = this;
-    $(window).on('resize', function(){
-      console.log($('.intro').width());
-      self.resize(self);
-    });
-  },
+//   watchWindow: function(){
+//     var self = this;
+//     $(window).on('resize', function(){
+//       self.resize(self);
+//     });
+//   },
 
-  resize: function(self){
-    var width = window.innerWidth
-    for (i in self.screenWidths){
-      if (width < self.screenWidths[i]){
-        if (i != self.current) {
-          self.current = i;
-          self.changeDimensions(self.itemPercents[i]);
-        }
-        break;
-      }
-    }
-  },
+//   resize: function(self){
+//     var width = window.innerWidth
+//     for (i in self.screenWidths){
+//       if (width < self.screenWidths[i]){
+//         if (i != self.current) {
+//           self.current = i;
+//           self.changeDimensions(self.itemPercents[i]);
+//         }
+//         break;
+//       }
+//     }
+//   },
 
-  changeDimensions: function(itemPercent){
-    console.log(itemPercent);
-    $(this.elementClass).css('width', itemPercent+'%');
-  }
+//   changeDimensions: function(itemPercent){
+//     $(this.elementClass).css('width', itemPercent+'%');
+//   }
 
-}
+// }
 
 
