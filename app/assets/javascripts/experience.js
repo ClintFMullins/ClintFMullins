@@ -4,7 +4,6 @@ $(document).ready(function(){
   Responsive.init(elementClass);
 });
 
-
 function AllExperiences(){
   this.experiences = [];
   this.init();
@@ -19,6 +18,7 @@ AllExperiences.prototype = {
       self.experiences.push(new Experience(name,type,this));
     });
     this.setUpListeners();
+    $('.all').click();
   },
 
   setUpListeners: function(){
@@ -31,6 +31,8 @@ AllExperiences.prototype = {
     }
 
     $('.all').on('click', function(){
+      $('.chosen').removeClass('chosen');
+      $(this).addClass('chosen');
       self.showAll();
     });
   },
@@ -38,6 +40,8 @@ AllExperiences.prototype = {
   oneListener: function(lookFor, affect){
     var self = this;
     $(lookFor).on('click', function(){
+      $('.chosen').removeClass('chosen');
+      $(this).addClass('chosen');
       self.showOnlyOne(affect);
     });
   },
@@ -122,27 +126,30 @@ var Responsive = {
   init: function(elementClass){
     this.current = null;
     this.elementClass = elementClass
-    this.screenWidths = [500,800,1300,1600];
-    this.itemPercents = [90,45,29,16];
+    this.screenWidths = [500,1000,1500,2000];
+    this.itemPercents = [90,45,30,23];
     this.watchWindow();
+    this.resize();
   },
 
   watchWindow: function(){
     var self = this;
     $(window).on('resize', function(){
-      var width = window.innerWidth
-
-      for (i in self.screenWidths){
-        if (width < self.screenWidths[i]){
-          if (i != self.current) {
-            self.current = i;
-            self.changeDimensions(self.itemPercents[i]);
-          }
-          break;
-        }
-      }
-
+      self.resize(self);
     });
+  },
+
+  resize: function(self){
+    var width = window.innerWidth
+    for (i in self.screenWidths){
+      if (width < self.screenWidths[i]){
+        if (i != self.current) {
+          self.current = i;
+          self.changeDimensions(self.itemPercents[i]);
+        }
+        break;
+      }
+    }
   },
 
   changeDimensions: function(itemPercent){

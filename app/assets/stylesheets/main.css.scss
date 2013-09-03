@@ -1,27 +1,119 @@
-body {
-	background-color: black;
+/*@import common*/
 
+@mixin shadow($color, $darker){
+  -webkit-box-shadow: 0px 4px 0px darken($color, $darker);
+  -moz-box-shadow:    0px 4px 0px darken($color, $darker);
+  box-shadow:         0px 4px 0px darken($color, $darker);
+}
+
+$skill-col: #E8DB0C;
+$employ-col: #0C44E8;
+$accomp-col: #00FF6A;
+$hobby-col: #FF6B0D;
+$grey: #ededed;
+
+@mixin chosen($color) {
+  color: complement($color);
+  background-color: $color;
+  width: 110%;
+  transition: width 2s;
+  height: 3em;
+  @include shadow($color, 20);
+}
+
+body {
+  /*background-image: url('creampaper.png');*/
+  background-image: url('tree_bark.png');
+  /*background-color: purple;*/
+  padding: 0;
+}
+
+html {
+  padding: 0;
 }
 
 .intro {
-	height: 10em;
-	background-color: black;
-	position: relative;
-	transition: height 1s;
+  @include shadow($grey, 30);
+  background-color: grey;
+  height: 30em;
+  position: fixed;
+  left: 1em;
+  top: 1em;
+  width: 20%;
 
-	.filters {
-		position: absolute;
-		bottom: 0;
-		margin-left:10%;
-        margin-right:auto;
-	}
-}
+  .caption{
+    position: absolute;
+    top: 0;
+    color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    transition: background-color 1s;
+    /*padding-bottom: 20em;*/
 
-.shrunken {
-	height: 3em;
+    &:hover{
+      background-color: rgba(0,0,0,0);
+
+    }
+  }
+  .prof-img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    transition: -webkit-filter 1s;
+
+    &:hover {
+      -webkit-filter: grayscale(0%);
+    }
+  }
+
+  .filters {
+    font-family: 'Quattrocento', serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .rider {
+      width: 100%;
+      text-align: center;
+    }
+
+    .all.chosen{
+      @include chosen(rgb(1,1,1));
+    }
+
+    .projects.chosen{
+      @include chosen($accomp-col);
+    }
+
+    .positions.chosen{
+      @include chosen($employ-col);
+    }
+
+    .hobbies.chosen{
+      @include chosen($hobby-col);
+    }
+
+    .skills.chosen{
+      @include chosen($skill-col);
+    }
+  }
 }
 
 .all-experiences {
-	margin: 0 auto;
-	width: 90%;
+  width: 78%;
+  margin-top: .5em;
+  float: right;
+}
+
+input {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  height: 2em;
+  transition: height 1s;
+  font-family: 'Quattrocento', serif;
+
+  &:hover{
+    height: 4em;
+    background-color: black;
+    color: #ededed;
+  }
 }

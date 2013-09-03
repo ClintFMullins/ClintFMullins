@@ -1,7 +1,11 @@
-$skill-col: #FFFE5C;
-$employ-col: #5C65FF;
-$accomp-col: #BDE8D7;
-$hobby-col: #E85F9A;
+/*require_relative 'common.css.scss'*/
+$skill-col: #E8DB0C;
+$employ-col: #0C44E8;
+$accomp-col: #00FF6A;
+$hobby-col: #FF6B0D;
+$grey: #ededed;
+/*$grey: #9D54FF;*/
+
 
 @mixin shadow($x,$y, $blur){
   -webkit-box-shadow: $x $y $blur rgba(200, 200, 200, 0.58);
@@ -40,21 +44,28 @@ $hobby-col: #E85F9A;
 }
 
 @mixin exp($color){
-  color: darken($color, 40);
-  background-color: lighten($color,20);
-  border: darken($color, 10) solid .2em;
+  color: darken($grey, 40);
+  background-color: lighten($grey,20);
+  border-top: darken($grey, 10) solid .2em;
+  border-bottom: darken($grey, 10) solid .2em;
+  /*border-left: $color solid .1em ;*/
   header {
-    height: 2.5em;
-    background-color: darken($color, 10);
+    border-bottom: $color solid .1em;
+    /*height: 2.5em;*/
+    background-color: darken($grey, 10);
     position: absolute;
     top: 0;
     width: 100%;
+
+    .name{
+      padding: .1em;
+    }
   }
 
   footer {
-    background-color: $color;
+    background-color: $grey;
     .more {
-      background-color: darken($color,20);
+      background-color: darken($grey,20);
       transition: border .2s, 
                   background-color .2s,
                   font-size .2s;
@@ -62,10 +73,10 @@ $hobby-col: #E85F9A;
 
       &:hover {
         font-size: 2em;
-        background-color: darken($color,30);
-        color: lighten($color,20);
-        border-top: solid darken($color,20) 2px;
-        border-left: solid darken($color,20) 2px;
+        background-color: lighten($color,40);
+        color: darken($color,10);
+        border-top: solid darken($grey,20) 2px;
+        border-left: solid darken($grey,20) 2px;
       }
     }
   }
@@ -73,17 +84,18 @@ $hobby-col: #E85F9A;
 
 .experience {
   display: inline-block;
-  width: 20em;
+  width: 30%;
   height: 15em;
-  margin: 1em .5em 0em .5em;
+  margin: 0em 1em 1em 0em;
   position: relative;
+  float: left;
   @include rounded-corners(2px);
 
   header {
     font-family: 'Roboto', sans-serif;
     letter-spacing: .05em;
     font-size: 1.3em;
-    height: 3em;
+    height: 2em;
 
     .name {
       float: left;
@@ -96,6 +108,11 @@ $hobby-col: #E85F9A;
     .unique {
       display: none;
     }
+  }
+
+  .content{
+    margin-top: 3.2em;
+    padding: .4em;
   }
 
   footer {
