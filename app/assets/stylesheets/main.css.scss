@@ -1,4 +1,3 @@
-/*@import common*/
 
 @mixin shadow($color, $darker){
   -webkit-box-shadow: 0px 4px 0px darken($color, $darker);
@@ -11,21 +10,30 @@ $employ-col: #0C44E8;
 $accomp-col: #00FF6A;
 $hobby-col: #FF6B0D;
 $grey: #ededed;
+/*$grey: #67FF49;*/
+
+$chosen-height: 3em;
 
 @mixin chosen($color) {
   color: complement($color);
   background-color: $color;
-  width: 110%;
-  transition: width 2s;
-  height: 3em;
+  width: 108%;
+  transition: width 1s;
+  /*height: $chosen-height;*/
   @include shadow($color, 20);
 }
 
-body {
-  /*background-image: url('creampaper.png');*/
-  background-image: url('tree_bark.png');
-  /*background-color: purple;*/
-  padding: 0;
+body {  
+  /*background-image: url('tree_bark.png');*/
+  background: rgb(169,3,41); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 html {
@@ -34,12 +42,13 @@ html {
 
 .intro {
   @include shadow($grey, 30);
-  background-color: grey;
-  height: 30em;
+  background-color: $grey;
+  height: 23em;
+  width: 272px;
   position: fixed;
   left: 1em;
   top: 1em;
-  width: 20%;
+  /*width: 20%;*/
 
   .caption{
     position: absolute;
@@ -52,12 +61,11 @@ html {
 
     &:hover{
       background-color: rgba(0,0,0,0);
-
     }
   }
   .prof-img {
     width: 100%;
-    -webkit-filter: grayscale(100%);
+    /*-webkit-filter: grayscale(100%);*/
     transition: -webkit-filter 1s;
 
     &:hover {
@@ -69,14 +77,12 @@ html {
     font-family: 'Quattrocento', serif;
     position: absolute;
     bottom: 0;
-    width: 100%;
-    .rider {
-      width: 100%;
-      text-align: center;
-    }
+    right: 0;
+    width: 30%;
 
-    .all.chosen{
-      @include chosen(rgb(1,1,1));
+
+    .all{
+      background-color: rgba(1,1,1,.5);
     }
 
     .projects.chosen{
@@ -107,12 +113,13 @@ input {
   width: 100%;
   border: none;
   cursor: pointer;
-  height: 2em;
+  height: 2.2em;
   transition: height 1s;
   font-family: 'Quattrocento', serif;
+  padding-right: 50px;
+  text-align: left;
 
-  &:hover{
-    height: 4em;
+  &:hover {
     background-color: black;
     color: #ededed;
   }

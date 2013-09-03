@@ -3,8 +3,8 @@ $skill-col: #E8DB0C;
 $employ-col: #0C44E8;
 $accomp-col: #00FF6A;
 $hobby-col: #FF6B0D;
-$grey: #ededed;
-/*$grey: #9D54FF;*/
+/*$grey: #ededed;*/
+$grey: white;
 
 
 @mixin shadow($x,$y, $blur){
@@ -48,10 +48,9 @@ $grey: #ededed;
   background-color: lighten($grey,20);
   border-top: darken($grey, 10) solid .2em;
   border-bottom: darken($grey, 10) solid .2em;
-  /*border-left: $color solid .1em ;*/
+
   header {
     border-bottom: $color solid .1em;
-    /*height: 2.5em;*/
     background-color: darken($grey, 10);
     position: absolute;
     top: 0;

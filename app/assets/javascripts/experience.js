@@ -31,6 +31,7 @@ AllExperiences.prototype = {
     }
 
     $('.all').on('click', function(){
+      window.scrollTo(0, 0);
       $('.chosen').removeClass('chosen');
       $(this).addClass('chosen');
       self.showAll();
@@ -40,6 +41,7 @@ AllExperiences.prototype = {
   oneListener: function(lookFor, affect){
     var self = this;
     $(lookFor).on('click', function(){
+      window.scrollTo(0, 0);
       $('.chosen').removeClass('chosen');
       $(this).addClass('chosen');
       self.showOnlyOne(affect);
@@ -135,6 +137,7 @@ var Responsive = {
   watchWindow: function(){
     var self = this;
     $(window).on('resize', function(){
+      console.log($('.intro').width());
       self.resize(self);
     });
   },
