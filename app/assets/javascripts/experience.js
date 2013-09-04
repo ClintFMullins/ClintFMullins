@@ -32,7 +32,9 @@ AllExperiences.prototype = {
 
     $('.all').on('click', function(){
       window.scrollTo(0, 0);
+      $('.chosen-ex').removeClass('chosen-ex');
       $('.chosen').removeClass('chosen');
+      $('.all-ex').addClass('chosen-ex');
       $(this).addClass('chosen');
       self.showAll();
     });
@@ -42,7 +44,9 @@ AllExperiences.prototype = {
     var self = this;
     $(lookFor).on('click', function(){
       window.scrollTo(0, 0);
+      $('.chosen-ex').removeClass('chosen-ex');
       $('.chosen').removeClass('chosen');
+      $(lookFor+'-ex').addClass('chosen-ex');
       $(this).addClass('chosen');
       self.showOnlyOne(affect);
     });
@@ -57,12 +61,6 @@ AllExperiences.prototype = {
       else {
         curExperience.disappear();
       }
-    }
-  },
-
-  toggleAll: function(){
-    for (i in this.experiences){
-      this.experiences[i].toggle();
     }
   },
 

@@ -36,27 +36,20 @@ html {
 
 .intro {
   @include shadow($grey, 30);
-  background-color: $grey;
+  background-color: darken($grey, 10);
   height: 23em;
   width: 272px;
   position: fixed;
   left: 1em;
   top: 1em;
-  /*width: 20%;*/
 
-  .caption{
-    position: absolute;
-    top: 0;
-    color: rgba(0,0,0,0);
-    background-color: rgba(0,0,0,.5);
-    width: 100%;
-    transition: background-color 1s;
-    /*padding-bottom: 20em;*/
-
-    &:hover{
-      background-color: rgba(0,0,0,0);
-    }
+  .explanation {
+    padding: 1em;
+    width: 67%;
+    color: darken($grey,40);
+    margin-top: -4px;
   }
+
   .prof-img {
     width: 100%;
     -webkit-filter: grayscale(100%);
@@ -110,6 +103,7 @@ html {
     z-index: 2;
     position: absolute;
     color: white;
+
   }
 
   .welcome-img {
@@ -138,4 +132,13 @@ input {
     background-color: black;
     color: #ededed;
   }
+}
+
+.ex {
+  display: none;
+  font-size: 1.3em;
+}
+
+.chosen-ex {
+  display: block;
 }
