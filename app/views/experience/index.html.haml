@@ -16,6 +16,6 @@
 .all-experiences
   .welcome
     =image_tag 'sf.jpg', class: 'welcome-img'
-    My name is Clint Mullins
+    .greeting My name is Clint Mullins
   - @experiences.each_with_index do |experience, i|
     = render partial: 'experience', locals: {experience: experience, i: i }

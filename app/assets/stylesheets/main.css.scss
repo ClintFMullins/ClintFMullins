@@ -59,7 +59,7 @@ html {
   }
   .prof-img {
     width: 100%;
-    /*-webkit-filter: grayscale(100%);*/
+    -webkit-filter: grayscale(100%);
     transition: -webkit-filter 1s;
 
     &:hover {
@@ -99,12 +99,18 @@ html {
 
 .welcome{
   width: 93%;
-  /*background-image: url('sf.png');*/
   overflow: hidden;
   height: 23em;
   margin-bottom: 1em;
   position: relative;
   @include shadow($grey, 30);
+
+  .greeting {
+    font-size: 4em;
+    z-index: 2;
+    position: absolute;
+    color: white;
+  }
 
   .welcome-img {
     position: absolute;
