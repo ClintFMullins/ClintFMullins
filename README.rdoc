@@ -1,8 +1,5 @@
-== Portfolio Site
+== Portfolio Site that was never finished.
 
-Currenlty unfinshed and unpolished. I hope to launch it by October.
-
-Single page app with a simple filtering system to show skills, projects, work history, and hobbies. 
-Meant for business but also for fun. I might link up tumblr to this site as well, but we'll see.
+but it was fun to hack around on it.
 
 
